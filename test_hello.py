@@ -4,5 +4,5 @@ from hello import main
 
 class TestHello(unittest.TestCase):
     def test_main(self):
-        self.assertEqual(main(), "Hello")
+        self.assertEqual(main(), "Hello, GitHub and CI!")
 

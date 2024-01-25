@@ -1,3 +1,3 @@
 def main():
-    return("Hello")
+    return("Hello, GitHub and CI!")
 
