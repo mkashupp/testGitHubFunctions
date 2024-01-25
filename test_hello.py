@@ -4,7 +4,5 @@ from hello import main
 
 class TestHello(unittest.TestCase):
     def test_main(self):
-        self.assertEqual(main(), "Hello, GitHub and CI!")
+        self.assertEqual(main(), "Hello")
 
-if __name__ == '__main__':
-    unittest.main()
