@@ -25,3 +25,7 @@ jobs:
     - name: Run tests
       run: |
         python -m unittest discover
+
+    - name: Run linting
+      run: |
+        pylint hello.py
