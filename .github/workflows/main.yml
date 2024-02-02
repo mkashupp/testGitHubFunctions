@@ -33,7 +33,13 @@ jobs:
       run: |
         pylint hello.py
 
+    - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+   
+    - name: Log in to Docker Hub
+        run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login mkashupp --password-stdin
+
     - name: Build Docker image
       run: |
-        docker build -t mkashupp/hello-docker .
-        docker push mkashupp/hello-docker
+        docker buildx build --platform linux/amd64,linux/arm64 -t mkashupp/hello-docker:latest .
+        docker push mkashupp/hello-docker:latest
