@@ -24,7 +24,7 @@ jobs:
     
     - name: Install Pylint
       run: pip install pylint
-      
+
     - name: Run tests
       run: |
         python -m unittest discover
@@ -32,3 +32,8 @@ jobs:
     - name: Run linting
       run: |
         pylint hello.py
+
+    - name: Build Docker image
+      run: |
+        docker build -t mkashupp/hello-docker .
+        docker push mkashupp/hello-docker
